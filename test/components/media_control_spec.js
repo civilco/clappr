@@ -1,5 +1,4 @@
 import {Config} from '../../src/base/utils'
-import Styler from '../../src/base/styler'
 import template from '../../src/base/template'
 import MediaControl from '../../src/components/media_control'
 import Playback from '../../src/base/playback'
@@ -115,7 +114,6 @@ describe('MediaControl', function() {
     it('can be extend the base mediacontrol with a custom template and stylesheet', function() {
       class MyMediaControl extends MediaControl {
         get template() { return template('<div>My HTML here</div>') }
-        get stylesheet () { return Styler.getStyleFor('.my-css-class {}') }
         constructor(options) { super(options) }
       }
 

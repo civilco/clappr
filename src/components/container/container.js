@@ -8,8 +8,6 @@
 
 import Events from 'base/events'
 import UIObject from 'base/ui_object'
-import Styler from 'base/styler'
-import style from './public/style.scss'
 import $ from 'clappr-zepto'
 
 /**
@@ -415,8 +413,6 @@ export default class Container extends UIObject {
   }
 
   render() {
-    const s = Styler.getStyleFor(style)
-    this.$el.append(s)
     this.$el.append(this.playback.render().el)
     this.updateStyle()
     return this

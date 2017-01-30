@@ -10,7 +10,6 @@ import {Config, Fullscreen, formatTime, extend, removeArrayItem} from 'base/util
 import {Kibo} from 'vendor'
 
 import Events from 'base/events'
-import Styler from 'base/styler'
 import UIObject from 'base/ui_object'
 import Browser from 'components/browser'
 import Mediator from 'components/mediator'
@@ -20,7 +19,6 @@ import Playback from 'base/playback'
 import $ from 'clappr-zepto'
 import merge from 'lodash.merge'
 
-import mediaControlStyle from './public/media-control.scss'
 import mediaControlHTML from './public/media-control.html'
 
 import playIcon from 'icons/01-play.svg'
@@ -67,8 +65,6 @@ export default class MediaControl extends UIObject {
   }
 
   get template() { return template(mediaControlHTML) }
-
-  get stylesheet() { return Styler.getStyleFor(mediaControlStyle, {baseUrl: this.options.baseUrl}) }
 
   get volume() { return (this.container && this.container.isReady) ? this.container.volume : this.intendedVolume }
   get muted() { return this.volume === 0 }
@@ -638,7 +634,6 @@ export default class MediaControl extends UIObject {
   render() {
     const timeout = 1000
     this.$el.html(this.template({ settings: this.settings }))
-    this.$el.append(this.stylesheet)
     this.createCachedElements()
     this.$playPauseToggle.addClass('paused')
     this.$playStopToggle.addClass('stopped')

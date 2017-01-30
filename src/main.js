@@ -29,7 +29,6 @@ import HTMLImg from 'playbacks/html_img'
 import NoOp from 'playbacks/no_op'
 import Poster from 'plugins/poster'
 import Log from 'plugins/log'
-import Styler from 'base/styler'
 import Vendor from 'vendor'
 import template from 'base/template'
 
@@ -65,7 +64,6 @@ export default {
   NoOp,
   Poster,
   Log,
-  Styler,
   Vendor,
   version,
   template,

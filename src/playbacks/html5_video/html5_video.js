@@ -5,10 +5,8 @@
 import {seekStringToSeconds} from 'base/utils'
 
 import Playback from 'base/playback'
-import Styler from 'base/styler'
 import Browser from 'components/browser'
 import Events from 'base/events'
-import tagStyle from './public/style.scss'
 import $ from 'clappr-zepto'
 
 const MIMETYPES = {
@@ -398,15 +396,12 @@ export default class HTML5Video extends Playback {
   }
 
   render() {
-    const style = Styler.getStyleFor(tagStyle)
-
     if (this.options.playback.disableContextMenu) {
       this.$el.on('contextmenu', () => {
         return false
       })
     }
 
-    this.$el.append(style)
     this._ready()
     return this
   }

@@ -4,9 +4,7 @@
 
 import UIContainerPlugin from 'base/ui_container_plugin'
 import Events from 'base/events'
-import Styler from 'base/styler'
 import template from 'base/template'
-import watermarkStyle from './public/watermark.scss'
 import watermarkHTML from './public/watermark.html'
 
 export default class WaterMarkPlugin extends UIContainerPlugin {
@@ -49,8 +47,6 @@ export default class WaterMarkPlugin extends UIContainerPlugin {
     this.$el.hide()
     const templateOptions = {position: this.position, imageUrl: this.imageUrl, imageLink: this.imageLink}
     this.$el.html(this.template(templateOptions))
-    const style = Styler.getStyleFor(watermarkStyle)
-    this.container.$el.append(style)
     this.container.$el.append(this.$el)
     return this
   }

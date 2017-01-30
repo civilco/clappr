@@ -1,9 +1,7 @@
 import UICorePlugin from 'base/ui_core_plugin'
 import template from 'base/template'
 import Playback from 'base/playback'
-import Styler from 'base/styler'
 import Events from 'base/events'
-import dvrStyle from './public/dvr_controls.scss'
 import dvrHTML from './public/index.html'
 
 export default class DVRControls extends UICorePlugin {
@@ -78,12 +76,10 @@ export default class DVRControls extends UICorePlugin {
   }
 
   render() {
-    this.style = this.style || Styler.getStyleFor(dvrStyle, { baseUrl: this.core.options.baseUrl })
     this.$el.html(this.template({
       live: this.core.i18n.t('live'),
       backToLive: this.core.i18n.t('back_to_live')
     }))
-    this.$el.append(this.style)
     if (this.shouldRender()) {
       this.core.mediaControl.$el.addClass('live')
       this.core.mediaControl.$('.media-control-left-panel[data-media-control]').append(this.$el)

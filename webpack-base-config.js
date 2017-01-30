@@ -16,15 +16,15 @@ module.exports = {
         exclude: [path.resolve(__dirname, './node_modules')]
         // config in .babelrc
       },
-      {
-        test: /\.scss$/,
-        loaders: ['css', 'sass?includePaths[]='
-            + require('node-bourbon').includePaths
-            + '&includePaths[]='
-            + path.resolve(__dirname, './src/base/scss')
-        ],
-        include: path.resolve(__dirname, 'src')
-      },
+      // {
+      //   test: /\.scss$/,
+      //   loaders: ['css', 'sass?includePaths[]='
+      //       + require('node-bourbon').includePaths
+      //       + '&includePaths[]='
+      //       + path.resolve(__dirname, './src/base/scss')
+      //   ],
+      //   include: path.resolve(__dirname, 'src')
+      // },
       {
         test: /\.(png|woff|eot|ttf|swf|cur)/, loader: 'url-loader?limit=1'
       },

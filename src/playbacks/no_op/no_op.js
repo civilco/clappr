@@ -1,9 +1,7 @@
 import {requestAnimationFrame, cancelAnimationFrame} from 'base/utils'
 import Playback from 'base/playback'
 import template from 'base/template'
-import Styler from 'base/styler'
 import Events from 'base/events'
-import noOpStyle from './public/style.scss'
 import noOpHTML from './public/error.html'
 
 export default class NoOp extends Playback {
@@ -20,10 +18,8 @@ export default class NoOp extends Playback {
   }
 
   render() {
-    const style = Styler.getStyleFor(noOpStyle)
     const playbackNotSupported = this.options.playbackNotSupportedMessage || this.i18n.t('playback_not_supported')
     this.$el.html(this.template({message: playbackNotSupported}))
-    this.$el.append(style)
     this.trigger(Events.PLAYBACK_READY, this.name)
     const showForNoOp = !!(this.options.poster && this.options.poster.showForNoOp)
     if (this.options.autoPlay || !showForNoOp) {
