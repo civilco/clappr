@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:clappr/clappr.git"
+    "url": "git@github.com:civilco/clappr.git"
   },
   "author": "Globo.com",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/clappr/clappr/issues"
+    "url": "https://github.com/civilco/clappr/issues"
   },
-  "homepage": "https://github.com/clappr/clappr",
+  "homepage": "https://github.com/civilco/clappr",
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.2",
